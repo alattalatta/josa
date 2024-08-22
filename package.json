@@ -50,5 +50,5 @@
     "한글",
     "조사"
   ],
-  "packageManager": "pnpm@8.14.1"
+  "packageManager": "pnpm@9.8.0"
 }
