@@ -1,9 +1,9 @@
 // @ts-check
 import { fakerKO as faker } from '@faker-js/faker'
 import text from '@kokr/text'
-import { josa } from '@toss/hangul'
 import autoJosa from 'auto-josa'
 import b from 'benny'
+import { josa } from 'es-hangul'
 import { getJosaPicker, josa as josaClassic } from 'josa'
 import { ko, resolve } from 'k-popo'
 
@@ -44,7 +44,7 @@ void b.suite(
   'functional',
 
   b.add('k-popo', () => resolve('(이)가', name())),
-  b.add('@toss/hangul', () => josa(name(), '이/가')),
+  b.add('es-hangul', () => josa(name(), '이/가')),
   b.add('josa', () => _josa(name())),
   b.cycle(),
   b.complete(),

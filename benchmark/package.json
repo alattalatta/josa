@@ -9,10 +9,10 @@
   "dependencies": {
     "@faker-js/faker": "^8.3.1",
     "@kokr/text": "^0.4.1",
-    "@toss/hangul": "^1.6.1",
     "@types/josa": "^3.0.5",
     "auto-josa": "^1.0.0",
     "benny": "^3.7.1",
+    "es-hangul": "^2.1.0",
     "esbuild": "^0.19.11",
     "esbuild-register": "^3.5.0",
     "josa": "^3.0.1",
@@ -20,5 +20,5 @@
     "kopo": "^1.1.8",
     "typescript": "^5.3.3"
   },
-  "version": null
+  "version": "0.0.0"
 }
