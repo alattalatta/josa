@@ -27,13 +27,16 @@ const foreignCharsRecord: Readonly<Record<string, number>> = {
   p: 1,
 }
 
-const hasNoCoda = (char: string, ignoreRieul: boolean): boolean => {
-  let coda = char >= '가' && char <= '힣' ? (char.charCodeAt(0) - 0xac00) % 28 : foreignCharsRecord[char] || 0
-  return !coda || (ignoreRieul && coda == 8)
+const hasNoCoda = (char: string, ignore_ㄹ: boolean): boolean => {
+  let coda = char >= '가' && char <= '힣' ? (char.charCodeAt(0) - 16) % 28 : foreignCharsRecord[char]
+  return !coda || (ignore_ㄹ && coda == 8)
 }
 
 /**
- * Resolve a postposition token into a fitting postposition, based on the word specified.
+ * Returns a proper postposition from given `tokenString` based on the `testString`.
+ *
+ * Note that `resolve()` does not support decomposed (NFD) Hangul characters.
+ * Use [`testString.normalize('NFC')`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize) if you need to.
  *
  * @param tokenString A string starting with one of supported Korean postposition tokens. `(은)는`, `(이)가`, `(을)를`, `(과)와`, `(으)로`, `(이)여`, `(이)`, and `(아)야` are available.
  * @param testString A string to resolve the token against.

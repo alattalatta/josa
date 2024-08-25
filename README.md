@@ -29,7 +29,7 @@ ko`${schedule}(이)여서 추가할 수 없어요. ${role}(이)가 필요합니�
 
 ### `ko: (template: TemplateStringsArray, ...words: (string | [string, string])[]) => string`
 
-Resolves all Korean [_postposition tokens_](#available-postposition-tokens) that are placed directly after a placeholder.
+Replaces all Korean [_postposition tokens_](#available-postposition-tokens) that are placed directly after a placeholder.
 
 ```js
 expect(ko`${'디자이너'}(으)로서 좌시할 수 없다.`).toBe('디자이너로서 좌시할 수 없다.')
@@ -47,7 +47,7 @@ expect(ko`${`너(당신)`}(은)는 모른다.`).toBe(`너(당신)는 모른다.`
 expect(ko`${`당신(너)`}(은)는 모른다.`).toBe(`당신(너)은 모른다.`)
 ```
 
-`ko` can also resolve tokens against numbers:
+`ko` can also replace tokens against numbers:
 
 ```js
 expect(ko`알고 계셨나요? ${'1'}(은)는 미지의 수입니다.`).toBe('알고 계셨나요? 1은 미지의 수입니다.')

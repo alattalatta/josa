@@ -3,9 +3,12 @@ import { resolve } from './resolve'
 type Parameter = string | readonly [display: string, pronunciation: string]
 
 /**
- * Resolves all postposition tokens right after a template slot to a fitting one.
+ * Replaces all postposition tokens right after a template slot to a proper one.
  *
  * `(은)는`, `(이)가`, `(을)를`, `(과)와`, `(으)로`, `(이)여`, `(이)`, and `(아)야` are available.
+ *
+ * Note that `ko()` does not support decomposed (NFD) Hangul characters.
+ * Use [`${word.normalize('NFC')}`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize) if you need to.
  *
  * @example
  * ko`그러자 ${name}(을)를 찾으며 말씀하시었으니, "${name}"(아)야, 어디 있느냐?`
