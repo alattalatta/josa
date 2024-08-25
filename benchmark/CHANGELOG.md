@@ -1,5 +1,12 @@
 # benchmark
 
+## 0.0.1
+
+### Patch Changes
+
+- Updated dependencies [4dd1812]
+  - k-popo@2.0.5
+
 ## null
 
 ### Patch Changes

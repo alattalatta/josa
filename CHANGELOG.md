@@ -1,5 +1,11 @@
 # k-popo
 
+## 2.0.5
+
+### Patch Changes
+
+- 4dd1812: Shave a few more bytes off
+
 ## 2.0.4
 
 ### Patch Changes
